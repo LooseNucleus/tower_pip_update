@@ -1,7 +1,10 @@
 ---
 - hosts: all
   tasks:
-  - name: install proxmoxer
+  - name: install modules
     pip:
-      name: proxmoxer
+      name: "{{ item }}"
       state: present
+    loop:
+    - proxmoxer
+    - dopy
